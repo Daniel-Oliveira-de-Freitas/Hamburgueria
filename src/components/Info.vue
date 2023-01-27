@@ -3,14 +3,17 @@
   <Picture/>
     <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
     <p v-else>Estou em busca de novas oportunidades</p>
-    <p v>Para desenvolver este projeto Utilizo as segintes tecnologias:</p>
+    <p >Utilizo as segintes tecnologias para backend:</p>
     <p></p>
     <ul>
-      <li>JavaScript</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>VUE.Js</li>
+      <li v-for="(technology, index) in backend_technologies" :key="index"> {{technology}} </li>
     </ul>
+    <p >Utilizo as segintes tecnologias para frontend:</p>
+    
+    <ul > 
+      <li v-for="technology in frontend_technologies" :key="technology.id">{{technology.language}} </li>
+    </ul>
+
     <div>
       <button @click="ShowEmail" >{{txtBotao}}</button>
     </div>
@@ -36,7 +39,13 @@ components:{
       mostrar_email: false,
       email: 'danisnake27@gmail.com',
       link_gitHub: 'https://github.com/Daniel-Oliveira-de-Freitas',
-      txtBotao: "Mostar Email"
+      txtBotao: "Mostar Email",
+      backend_technologies: ['JavaScript', 'PHP', 'Python'],
+      frontend_technologies:[
+        {id: 1, language: 'HTML'},
+        {id: 2, language: 'CSS'},
+        {id: 3, language: 'Vue'},
+      ]
     };
   },
 
