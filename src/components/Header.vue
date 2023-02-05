@@ -16,16 +16,21 @@ export default {
 
 <style scoped>
 
-  
+div{
+}
 
 ul{
     list-style: none;
     display: flex;
     background-color: #999;
+    height: 50px;
+
+    margin-top: 0;
+
 }
 li{
     margin-right: 10px;
-    
+    margin-top:  15px;
     
 }
 a{

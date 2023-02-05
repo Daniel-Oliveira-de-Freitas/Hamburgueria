@@ -1,5 +1,7 @@
 <template>
+    <div class="img">
     <img :src="avatar" :alt="descricao">
+    </div>
 </template>
 
 <script>
@@ -13,3 +15,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .img{
+        text-align: center;
+    }
+</style>
