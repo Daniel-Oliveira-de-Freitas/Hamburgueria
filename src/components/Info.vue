@@ -33,11 +33,14 @@ components:{
   Picture
 },
 
+props:{
+  email: String,
+  esta_trabalhando: Boolean
+},
+
   data() {
     return {
-      esta_trabalhando: true,
       mostrar_email: false,
-      email: 'danisnake27@gmail.com',
       link_gitHub: 'https://github.com/Daniel-Oliveira-de-Freitas',
       txtBotao: "Mostar Email",
       backend_technologies: ['JavaScript', 'PHP', 'Python'],

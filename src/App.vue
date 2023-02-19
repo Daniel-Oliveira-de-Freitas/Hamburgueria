@@ -1,6 +1,6 @@
 <template>
 
-    <Header/>
+    <Header :esta_logado="true" />
 
 <div>
 <PrimeiroComponente/>

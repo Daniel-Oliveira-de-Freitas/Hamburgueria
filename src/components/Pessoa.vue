@@ -3,7 +3,7 @@
     <h3 >
     <CicloVida />
     </h3>
-    <Info/>
+    <Info :email="email" :esta_trabalhando=false />
     <Form/>
     
   </div>
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       nome: "Daniel",
+      email: 'danisnake27@gamil.com'
     };
   },
 };
