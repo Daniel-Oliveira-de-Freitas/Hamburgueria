@@ -12,7 +12,6 @@ const router = createRouter({
     {
       path: '/pedidos',
       name: 'Pedidos',
-      
       component: () => import('../views/Pedidos.vue')
     }
   ]
