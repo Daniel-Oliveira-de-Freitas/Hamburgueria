@@ -3,18 +3,18 @@
   <Banner />
   <div class="main-container">
     <h1>Monte seu pedido:</h1>
-    <p>formulario
-
-    </p>
+    <Form />
   </div>
 </template>
 
 <script>
 import Banner from "../components/Banner.vue";
+import Form from "../components/Form.vue";
 export default {
   name: "Home",
   components: {
-    Banner
+    Banner,
+    Form
   }
 }
 </script>
