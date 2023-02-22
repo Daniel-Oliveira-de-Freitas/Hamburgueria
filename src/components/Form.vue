@@ -2,7 +2,7 @@
     <div>
         <p>Componente de mensagem</p>
     <div>
-        <form id="form">
+        <form id="form" @submit="criarPedido">
             <div class="input-container">
                 <label for="nome">Nome do cliente:</label>
                 <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu nome">
@@ -46,7 +46,6 @@ data(){
     pao: null,
     carne: null,
     opcionais: [],
-    status: "Solicitado",
     msg: null
   }
 },
@@ -58,7 +57,28 @@ data(){
       this.paes = data.paes;
       this.carnes = data.carnes;
       this.opcionaisdata = data.opcionais;
-    }
+    },
+    async criarPedido(e){
+      e.preventDefault();
+
+      const data = {
+        nome: this.nome,
+        pao: this.pao,
+        carne: this.carne,
+        opcionais: Array.from(this.opcionais),
+        status: "Solicitado"
+      }
+      const dataJson = JSON.stringify(data);
+
+      const  req = await fetch("http://localhost:3000/burgers",{
+        method: "POST",
+        headers: {"content-type": "application/json"},
+        body: dataJson
+      });
+
+      const  res = await req.json();
+      console.log(res)
+    },
   },
   mounted() {
   this.getIngredientes()
@@ -90,7 +110,7 @@ label{
 
 input, select{
     padding: 5px 10px;
-    width: 300px;
+    width: 98%;
 }
 
 #opcionais-container{
