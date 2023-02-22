@@ -1,28 +1,28 @@
 # Hamburgueria
 
-This template should help get you started developing with Vue 3 in Vite.
+Este projeto foi desenvolvido com a tecnologia Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Configuração recomendada para sua IDE
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) || [IntelliJ IDEA](https://www.jetbrains.com/pt-br/idea/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
+## Personalizar configuração
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Veja [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Configuração do projeto
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilar para desenvolvimento
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compilar para Produção
 
 ```sh
 npm run build
