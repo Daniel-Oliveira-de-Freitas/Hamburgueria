@@ -105,7 +105,7 @@ label{
    margin-bottom: 15px;
    color: #222;
    padding: 5px 10px;
-   border-left: 4px solid #FCBA03; 
+   border-left: 4px solid #4682B4;
 }
 
 input, select{
@@ -140,8 +140,8 @@ input, select{
 }
 
 .btn-submit{
-    background-color: #222;
-    color: #FCBA03;
+    background-color: #4682B4;
+    color: #000;
     font-weight: bold;
     padding: 10px;
     font-size: 15px;
@@ -153,7 +153,8 @@ input, select{
 }
 
 .btn-submit:hover{
-    background-color: #FCBA03;
-    color: #222;
+    background-color: #222;
+    color: #4682B4;
+
 }
 </style>
