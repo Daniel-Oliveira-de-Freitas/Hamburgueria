@@ -12,8 +12,8 @@ export default {
 </script>
 <style>
     #main-banner{
-        background-image: url('/img/burger.jpg');
-        background-position: 0 -250px;
+        background-image: url('/img/baner.webp');
+        background-position: 250px -200px;
         background-size: cover;
         height: 500px;
         display: flex;
@@ -22,7 +22,7 @@ export default {
     }
 
     #main-banner h1{
-        color: #fff;
+        color: #FCBA03;
         font-size: 70px;
         font-weight: bold;
         text-align: center;
