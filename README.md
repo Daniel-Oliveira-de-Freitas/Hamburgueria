@@ -4,7 +4,7 @@ Este projeto foi desenvolvido com a tecnologia Vue 3 in Vite.
 
 ## Configuração recomendada para sua IDE
 
-[VSCode](https://code.visualstudio.com/) ou [IntelliJ IDEA](https://www.jetbrains.com/pt-br/idea/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[IntelliJ IDEA](https://www.jetbrains.com/pt-br/idea/) ou [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
 ## Personalizar configuração
 
