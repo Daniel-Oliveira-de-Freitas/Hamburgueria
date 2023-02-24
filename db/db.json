@@ -102,12 +102,13 @@
       "id": 2
     },
     {
-      "nome": null,
-      "pao": null,
-      "carne": null,
+      "nome": "Giovana",
+      "pao": "Parmesão e Orégano",
+      "carne": "Maminha",
       "opcionais": [
-        "Tomate"
-      ],
+        "Bacon",
+        "Cebola roxa",
+        "Tomate"],
       "status": "Solicitado",
       "id": 3
     }

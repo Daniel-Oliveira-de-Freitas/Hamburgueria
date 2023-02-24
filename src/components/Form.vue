@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Componente de mensagem</p>
+      <Message :msg="msg" v-show="msg" />
     <div>
         <form id="form" @submit="criarPedido">
             <div class="input-container">
@@ -35,8 +35,14 @@
 </template>
 
 <script>
+import Message from "@/components/Message.vue";
+
+
 export default {
 name: "Form",
+  components: {
+    Message,
+  },
 data(){
   return {
     paes: null,
@@ -68,6 +74,7 @@ data(){
         opcionais: Array.from(this.opcionais),
         status: "Solicitado"
       }
+
       const dataJson = JSON.stringify(data);
 
       const  req = await fetch("http://localhost:3000/burgers",{
@@ -76,13 +83,32 @@ data(){
         body: dataJson
       });
 
-      const  res = await req.json();
-      console.log(res)
+
+
+
+
+        const  res = await req.json();
+        console.log(res)
+
+      // mensagem do sistema
+      this.msg = `Pedido Nº ${res.id} realizado com sucesso!`;
+
+      // limpar mensagem
+      setTimeout(() => this.msg = "", 3000)
+
+      // limpa os campos do pedido
+      this.nome = "";
+      this.pao = "";
+      this.carne = "";
+      this.opcionais = "";
+
+      }
     },
-  },
+
   mounted() {
   this.getIngredientes()
-  }
+  },
+
 }
 </script>
 
