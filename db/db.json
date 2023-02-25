@@ -77,40 +77,5 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": [
-    {
-      "nome": "Daniel",
-      "pao": "Parmesão e Orégano",
-      "carne": "Alcatra",
-      "opcionais": [
-        "Cebola roxa",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 1
-    },
-    {
-      "nome": "Saulo",
-      "pao": "3 Queijos",
-      "carne": "Maminha",
-      "opcionais": [
-        "Bacon",
-        "Cebola roxa",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 2
-    },
-    {
-      "nome": "Giovana",
-      "pao": "Parmesão e Orégano",
-      "carne": "Maminha",
-      "opcionais": [
-        "Bacon",
-        "Cebola roxa",
-        "Tomate"],
-      "status": "Solicitado",
-      "id": 3
-    }
-  ]
+  "burgers": []
 }
