@@ -2,7 +2,7 @@
     <div>
       <Message :msg="msg" v-show="msg" />
     <div>
-        <form id="form" @submit="criarPedido">
+        <form id="form" @submit="criarPedido" >
             <div class="input-container">
                 <label for="nome">Nome do cliente:</label>
                 <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu nome">
@@ -64,7 +64,7 @@ data(){
       this.carnes = data.carnes;
       this.opcionaisdata = data.opcionais;
     },
-    async criarPedido(e){
+    async criarPedido(e) {
       e.preventDefault();
 
       const data = {
@@ -74,35 +74,29 @@ data(){
         opcionais: Array.from(this.opcionais),
         status: "Solicitado"
       }
+      if (data.nome != null && data.pao != null && data.carne != null) {
+        const dataJson = JSON.stringify(data);
+        const req = await fetch("http://localhost:3000/burgers", {
+          method: "POST",
+          headers: {"content-type": "application/json"},
+          body: dataJson
+        });
+        const res = await req.json();
+        // mensagem do sistema
+        this.msg = `Pedido Nº ${res.id} realizado com sucesso!`;
+        // limpar mensagem
+        setTimeout(() => this.msg = "", 3000)
+        // limpa os campos do pedido
+        this.nome = "";
+        this.pao = "";
+        this.carne = "";
+        this.opcionais = "";
 
-      const dataJson = JSON.stringify(data);
-
-      const  req = await fetch("http://localhost:3000/burgers",{
-        method: "POST",
-        headers: {"content-type": "application/json"},
-        body: dataJson
-      });
-
-
-
-
-
-        const  res = await req.json();
-        console.log(res)
-
-      // mensagem do sistema
-      this.msg = `Pedido Nº ${res.id} realizado com sucesso!`;
-
-      // limpar mensagem
-      setTimeout(() => this.msg = "", 3000)
-
-      // limpa os campos do pedido
-      this.nome = "";
-      this.pao = "";
-      this.carne = "";
-      this.opcionais = "";
-
+      }else{
+        this.msg = "O nome do cliente, pão e carne são obrigatórios"
+        setTimeout(() => this.msg = "", 3000)
       }
+    }
     },
 
   mounted() {

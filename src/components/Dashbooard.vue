@@ -1,5 +1,6 @@
 <template>
 <div id="table">
+  <Message :msg="msg" v-show="msg" />
   <div>
     <div id="table-heading">
       <div class="order-id">#:</div>
@@ -35,14 +36,19 @@
 </template>
 
 <script>
+import Message from "@/components/Message.vue";
 export default {
   name: "Dashbooard",
   data() {
     return {
       burgers: null,
       burgers_id: null,
-      status: []
+      status: [],
+      msg: null
     }
+  },
+  components:{
+    Message
   },
   methods:{
     async getPedidos(){
@@ -61,13 +67,21 @@ export default {
     },
 
     async deletePedido(id){
-      const req = await fetch(`http://localhost:3000/burgers/${id}`,{
-        method: "DELETE",
-      });
+      if (confirm("Deseja deletar este pedido!") == true) {
+        const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+          method: "DELETE",
+        });
 
-      const res = await req.json();
-      this.getPedidos();
+        const res = await req.json();
+        this.msg = `Pedido foi deletado com sucesso!`;
+        setTimeout(() => this.msg = "", 3000)
+        this.getPedidos();
+      }else{
 
+        this.msg = `Pedido não foi deletado!`;
+        setTimeout(() => this.msg = "", 3000)
+
+      }
     },
 
     async updatePedido(event, id){
@@ -80,6 +94,9 @@ export default {
         body: dataJson
       });
       const res = await req.json();
+
+      this.msg = `Pedido Nº ${res.id} atualizado para ${res.status}!`;
+      setTimeout(() => this.msg = "", 3000)
     }
   },
   mounted() {
