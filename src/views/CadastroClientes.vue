@@ -1,7 +1,8 @@
 <template>
   <h1>Cadastro de Clientes</h1>
   <div>
-    <form id="form" @submit="fazerCadastro" >
+    <Message :msg="msg" v-show="msg" />
+    <form id="form" @submit="cadastro" >
       <div class="input-container">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" v-model="nome" placeholder="Digite o seu nome">
@@ -16,19 +17,62 @@
       </div>
       <div class="input-container">
         <label for="nome">Senha:</label>
-        <input type="password" name="password" id="password" v-model="password" placeholder="Digite sua senha">
+        <input type="password" name="senha" id="senha" v-model="senha" placeholder="Digite sua senha">
       </div>
 
       <div class="input-container">
-        <input type="submit" class="btn-submit" value="Fazer Login">
+        <input type="submit" class="btn-submit" value="Cadastrar">
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import Message from "@/components/Message.vue";
 export default {
-  name: "CadastroClientes"
+  name: "CadastroClientes",
+  components:{
+    Message
+  },
+  data(){
+    return{
+      nome: null,
+      endereco: null,
+      email: null,
+      senha: null,
+      msg: null
+    }
+  },
+  methods:{
+    async cadastro(e){
+      e.preventDefault();
+      const data = {
+        nome: this.nome,
+        endereco: this.endereco,
+        email: this.email,
+        senha: this.senha
+      }
+        const dataJson = JSON.stringify(data);
+        const req = await fetch("http://localhost:3000/clientes", {
+          method: "POST",
+          headers: {"content-type": "application/json"},
+          body: dataJson
+        });
+        console.log(dataJson)
+
+        const res = await req.json();
+        // mensagem do sistema
+        this.msg = `Cliente Nº ${res.id} cadastrado com sucesso!`;
+        // limpar mensagem
+        setTimeout(() => this.msg = "", 3000)
+        // limpa os campos do pedido
+        this.nome = "";
+        this.endereco = "";
+        this.email = "";
+        this.senha = "";
+
+    }
+  },
 }
 </script>
 

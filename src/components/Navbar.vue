@@ -7,6 +7,7 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/pedidos">Pedidos</RouterLink>
         <RouterLink to="/cadastroClientes">Cadastro</RouterLink>
+        <RouterLink to="/clientes">Gerenciamento de Clientes</RouterLink>
         <RouterLink to="/login">Login</RouterLink>
 
     </nav>

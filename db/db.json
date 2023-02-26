@@ -79,13 +79,20 @@
   ],
   "burgers": [
     {
-      "nome": "gio",
-      "pao": "Integral",
+      "nome": "Daniel",
+      "pao": "3 Queijos",
       "carne": "Alcatra",
-      "opcionais": [
-        "Cebola roxa"
-      ],
-      "status": "Finalizado",
+      "opcionais": [],
+      "status": "Solicitado",
+      "id": 1
+    }
+  ],
+  "clientes": [
+    {
+      "nome": "Daniel",
+      "endereco": "rua gaudencio  mota 310",
+      "email": "danisnake27@gmail.com",
+      "senha": "1234",
       "id": 1
     }
   ]
