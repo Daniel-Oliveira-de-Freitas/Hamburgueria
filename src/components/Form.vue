@@ -125,7 +125,7 @@ label{
    margin-bottom: 15px;
    color: #222;
    padding: 5px 10px;
-   border-left: 4px solid #4682B4;
+   border-left: 4px solid #fcba03;
 }
 
 input, select{
@@ -160,7 +160,7 @@ input, select{
 }
 
 .btn-submit{
-    background-color: #4682B4;
+    background-color: #fcba03;
     color: #000;
     font-weight: bold;
     padding: 10px;

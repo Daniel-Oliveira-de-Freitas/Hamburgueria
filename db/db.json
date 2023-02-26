@@ -77,5 +77,16 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "nome": "gio",
+      "pao": "Integral",
+      "carne": "Alcatra",
+      "opcionais": [
+        "Cebola roxa"
+      ],
+      "status": "Finalizado",
+      "id": 1
+    }
+  ]
 }

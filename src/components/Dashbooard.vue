@@ -145,7 +145,7 @@ export default {
  }
 
  .delete-btn{
-   background-color: #4682B4;
+   background-color: #fcba03;
    color: #000;
    font-weight: bold;
    padding: 10px;

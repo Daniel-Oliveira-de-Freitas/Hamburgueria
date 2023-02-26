@@ -14,7 +14,7 @@ export default {
         height: 50px;
         background-color: #222;
         border-top: 4px solid #111;
-        color: #4682B4;
+        color: #fcba03 ;
         display: flex;
         align-items: center;
         justify-content: center;

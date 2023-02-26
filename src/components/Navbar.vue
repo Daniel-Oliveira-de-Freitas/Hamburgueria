@@ -6,6 +6,9 @@
     </Router-link>    
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/pedidos">Pedidos</RouterLink>
+        <RouterLink to="/cadastroClientes">Cadastro</RouterLink>
+        <RouterLink to="/login">Login</RouterLink>
+
     </nav>
 </template>
 <script>
@@ -33,7 +36,7 @@ export default {
         height: 40px;
     }
     #nav a{
-        color: #4682B4;
+        color: #fcba03;
         text-decoration: none;
         margin: 12px;
         transition: .5s;
